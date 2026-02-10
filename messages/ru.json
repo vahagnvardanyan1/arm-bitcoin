@@ -1,0 +1,14 @@
+{
+  "appTitle": "Next Шаблон",
+  "home": "Главная",
+  "heroTitle": "Создавайте быстрее с Next.js",
+  "heroSubtitle": "Готовый шаблон с MUI, интернационализацией и темами. Пропустите шаблонный код и начните разработку.",
+  "getStarted": "Начать",
+  "viewOnGithub": "GitHub",
+  "goBack": "Назад",
+  "toggleTheme": "Переключить тему",
+  "language": "Язык",
+  "english": "Английский",
+  "armenian": "Армянский",
+  "russian": "Русский"
+}
