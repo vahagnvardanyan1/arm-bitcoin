@@ -49,6 +49,12 @@ export const StyledContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2),
   borderRadius: theme.shape.borderRadius,
 }));
+
+// When wrapping a polymorphic component (one that accepts `component` prop),
+// cast to preserve the prop type:
+export const Title = styled(Typography)({
+  marginBottom: 12,
+}) as typeof Typography;
 ```
 
 ## Index File

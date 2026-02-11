@@ -10,6 +10,7 @@ Documentation for next-template — a Next.js 16 + MUI 7 + Zustand + next-intl s
 
 - [Store](reference/store.md) — Zustand state management
 - [Integrations](reference/integrations.md) — Third-party libraries
+- [SEO](reference/seo.md) — Localized metadata and Open Graph
 
 ## Contributing
 

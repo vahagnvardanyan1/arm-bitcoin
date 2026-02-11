@@ -16,12 +16,12 @@ Next.js 16 starter template with MUI 7, Zustand 5, next-intl 4, TypeScript 5, Re
 ```
 src/
 ├── app/                    # Next.js App Router
-│   ├── layout.tsx          # Root layout
 │   ├── globals.css         # Global styles
 │   └── [locale]/           # Locale-based routing (en, hy, ru)
-│       ├── layout.tsx      # Locale layout with providers
+│       ├── layout.tsx      # Locale layout with providers + SEO metadata
 │       └── page.tsx        # Home page
 ├── components/             # Reusable UI components (each in own directory)
+├── constants/              # App-wide constants (configs, enums)
 ├── hooks/                  # Custom React hooks
 ├── i18n/                   # next-intl config (routing, request, navigation)
 ├── providers/              # Context providers (ThemeProvider)
@@ -31,6 +31,7 @@ src/
 ├── proxy.ts                # i18n middleware
 └── theme.ts                # MUI theme (CSS variables, light/dark)
 messages/                   # Translation JSON files (en.json, hy.json, ru.json)
+next-sitemap.config.mjs     # Sitemap & robots.txt generation config
 ```
 
 ## Architecture Decisions
@@ -83,10 +84,12 @@ const value = getAppStore().sidebarOpen;
 - **Client components** — `useTranslator()` hook
 - **Server components** — `getTranslations()` async function
 - Translation files in `messages/` directory (en.json, hy.json, ru.json)
+- **Flat structure only** — no nested objects in translation files. Use camelCase prefixes to group related keys (e.g. `seoTitle`, `seoDescription`).
 
 ## Gotchas
 
 - `styled.tsx` files always need `"use client"` directive.
+- When using `styled()` on a polymorphic MUI component (one that accepts `component` prop), add `as typeof Typography` (or the base component type) to preserve the `component` prop type.
 - Never put business logic in UI components — extract to hooks or services.
 - Zustand selectors must be defined outside components to prevent re-renders.
 - The `@/*` path alias resolves to `./src/*`.
@@ -104,3 +107,4 @@ For deeper reference, see:
 - `docs/contributing/eslint.md` — ESLint rules mapped to principles
 - `docs/reference/store.md` — Zustand architecture, adding slices
 - `docs/reference/integrations.md` — MUI, Zustand, Emotion, next-intl, Roboto details
+- `docs/reference/seo.md` — SEO metadata, canonical URLs, robots.txt, sitemap

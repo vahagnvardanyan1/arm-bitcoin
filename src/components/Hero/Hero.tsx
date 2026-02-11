@@ -16,6 +16,7 @@ import {
   Subtitle,
   PrimaryButton,
   OutlinedButton,
+  DemoTitle,
   DemoWrapper,
 } from "./styled";
 
@@ -47,6 +48,7 @@ const Hero = async () => {
 
         <Subtitle
           variant="h5"
+          component="h2"
           className="animate-fade-in-up-delay-2"
           sx={{
             color: "text.secondary",
@@ -81,6 +83,9 @@ const Hero = async () => {
         </Stack>
 
         <DemoWrapper className="animate-fade-in">
+          <DemoTitle variant="subtitle2" component="h3">
+            {t("demoTitle")}
+          </DemoTitle>
           <CounterDemo />
         </DemoWrapper>
       </Container>

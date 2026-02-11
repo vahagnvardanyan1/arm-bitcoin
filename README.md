@@ -73,3 +73,4 @@ For detailed guides, see the `docs/` directory:
 - [ESLint Rules](docs/contributing/eslint.md) — ESLint rules mapped to principles
 - [Store Reference](docs/reference/store.md) — Zustand architecture, adding slices
 - [Integrations](docs/reference/integrations.md) — MUI, Zustand, Emotion, next-intl details
+- [SEO](docs/reference/seo.md) — metadata, canonical URLs, robots.txt, sitemap

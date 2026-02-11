@@ -45,7 +45,7 @@ export const Subtitle = styled(Typography)({
   marginRight: "auto",
   marginBottom: 40,
   lineHeight: 1.6,
-});
+}) as typeof Typography;
 
 export const PrimaryButton = styled(Button)({
   paddingLeft: 28,
@@ -72,8 +72,15 @@ export const OutlinedButton = styled(Button)({
   },
 });
 
-export const DemoWrapper = styled(Box)({
+export const DemoTitle = styled(Typography)({
   marginTop: 64,
+  marginBottom: 12,
+  textTransform: "uppercase",
+  letterSpacing: 1.5,
+  opacity: 0.5,
+}) as typeof Typography;
+
+export const DemoWrapper = styled(Box)({
   maxWidth: 320,
   marginLeft: "auto",
   marginRight: "auto",

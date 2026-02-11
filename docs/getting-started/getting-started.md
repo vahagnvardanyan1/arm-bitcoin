@@ -22,7 +22,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | Script | Description |
 |--------|-------------|
 | `npm run dev` | Development server with Fast Refresh |
-| `npm run build` | Production build |
+| `npm run build` | Production build (runs `postbuild` automatically) |
 | `npm run start` | Serve production build |
 | `npm run lint` | Run ESLint |
 
@@ -43,12 +43,12 @@ Open [http://localhost:3000](http://localhost:3000).
 ```
 src/
 ├── app/
-│   ├── layout.tsx              # Root layout
 │   ├── globals.css             # Global styles
 │   └── [locale]/               # Locale-based routing
-│       ├── layout.tsx          # Locale layout (providers, header)
+│       ├── layout.tsx          # Locale layout (providers, header, SEO metadata)
 │       └── page.tsx            # Home page
 ├── components/                 # UI components
+├── constants/                  # App-wide constants (configs, enums)
 ├── hooks/                      # Custom hooks
 ├── i18n/                       # Internationalization config
 ├── providers/                  # Context providers
@@ -57,6 +57,7 @@ src/
 │   └── slices/
 └── theme.ts                    # MUI theme
 messages/                       # Translation files (en, hy, ru)
+next-sitemap.config.mjs         # Sitemap & robots.txt generation
 ```
 
 ## Request Flow
@@ -105,3 +106,4 @@ Extend the theme in `src/theme.ts` — see [MUI theming docs](https://mui.com/ma
 - [Store](../reference/store.md) — Zustand state management
 - [Component Structure](../contributing/component-structure.md) — how to organize components
 - [Engineering Principles](../contributing/code.md) — 16 frontend rules
+- [SEO](../reference/seo.md) — metadata, canonical URLs, robots.txt, sitemap
