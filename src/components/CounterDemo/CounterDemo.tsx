@@ -2,7 +2,6 @@
 
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import Box from "@mui/material/Box";
 
 import { useAppStore, setAppStore } from "@/store";
 import type { IAppStore } from "@/store";
@@ -17,6 +16,8 @@ import {
   CounterValue,
   CodeHint,
   CodeText,
+  CodeFn,
+  CodeProp,
 } from "./styled";
 
 const selector = (store: IAppStore) => ({
@@ -55,13 +56,9 @@ export const CounterDemo = () => {
 
       <CodeHint>
         <CodeText component="code">
-          <Box component="span" sx={{ color: "#7c3aed" }}>
-            setAppStore
-          </Box>
+          <CodeFn>setAppStore</CodeFn>
           {"((s) => ({ "}
-          <Box component="span" sx={{ color: "#22c55e" }}>
-            counter
-          </Box>
+          <CodeProp>counter</CodeProp>
           {": s.counter + 1 }))"}
         </CodeText>
       </CodeHint>

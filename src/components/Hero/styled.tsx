@@ -3,13 +3,20 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
+import MuiContainer from "@mui/material/Container";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
-export const HeroRoot = styled(Box)({
+export const HeroRoot = styled(Box)(({ theme }) => ({
   position: "relative",
   overflow: "hidden",
-});
+  paddingTop: theme.spacing(10),
+  paddingBottom: theme.spacing(8),
+  [theme.breakpoints.up("md")]: {
+    paddingTop: theme.spacing(16),
+    paddingBottom: theme.spacing(14),
+  },
+}));
 
 export const BackgroundGlow = styled(Box)({
   position: "absolute",
@@ -23,6 +30,11 @@ export const BackgroundGlow = styled(Box)({
   pointerEvents: "none",
 });
 
+export const HeroContainer = styled(MuiContainer)({
+  position: "relative",
+  textAlign: "center",
+});
+
 export const BadgeChip = styled(Chip)(({ theme }) => ({
   marginBottom: theme.spacing(3),
   backgroundColor: "rgba(0,112,243,0.08)",
@@ -33,19 +45,28 @@ export const BadgeChip = styled(Chip)(({ theme }) => ({
   borderColor: "rgba(0,112,243,0.2)",
 }));
 
-export const Title = styled(Typography)({
+export const Title = styled(Typography)(({ theme }) => ({
   lineHeight: 1.1,
   marginBottom: 20,
-});
+  fontSize: "2.5rem",
+  [theme.breakpoints.up("md")]: {
+    fontSize: "4rem",
+  },
+}));
 
-export const Subtitle = styled(Typography)({
+export const Subtitle = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   maxWidth: 600,
   marginLeft: "auto",
   marginRight: "auto",
   marginBottom: 40,
   lineHeight: 1.6,
-}) as typeof Typography;
+  color: theme.palette.text.secondary,
+  fontSize: "1rem",
+  [theme.breakpoints.up("md")]: {
+    fontSize: "1.2rem",
+  },
+})) as typeof Typography;
 
 export const PrimaryButton = styled(Button)({
   paddingLeft: 28,

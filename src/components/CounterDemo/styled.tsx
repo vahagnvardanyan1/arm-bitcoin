@@ -72,3 +72,11 @@ export const CodeText = styled(Typography)({
   fontSize: 12,
   color: "#52525b",
 }) as typeof Typography;
+
+export const CodeFn = styled("span")({
+  color: "#7c3aed",
+});
+
+export const CodeProp = styled("span")({
+  color: "#22c55e",
+});
