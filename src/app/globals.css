@@ -5,15 +5,10 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #0070f3 0%, #7928ca 50%, #ff0080 100%);
+  background: linear-gradient(135deg, rgb(227, 171, 41) 0%, rgb(66, 2, 112) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.terminal-block {
-  position: relative;
-  font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
 }
 
 @keyframes fadeInUp {
@@ -30,6 +25,21 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
 }
 
 .animate-fade-in-up {

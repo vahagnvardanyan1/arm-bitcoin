@@ -9,11 +9,11 @@ const theme = createTheme({
   colorSchemes: {
     light: {
       palette: {
-        primary: { main: "#0070f3" },
-        secondary: { main: "#7928ca" },
+        primary: { main: "rgb(227, 171, 41)" },
+        secondary: { main: "rgb(66, 2, 112)" },
         background: {
-          default: "#ffffff",
-          paper: "#fafafa",
+          default: "#F5F5F5",
+          paper: "#FFFFFF",
         },
         text: {
           primary: "#171717",
@@ -24,11 +24,11 @@ const theme = createTheme({
     },
     dark: {
       palette: {
-        primary: { main: "#0070f3" },
-        secondary: { main: "#7928ca" },
+        primary: { main: "rgb(227, 171, 41)" },
+        secondary: { main: "rgb(66, 2, 112)" },
         background: {
-          default: "#0a0a0a",
-          paper: "#111111",
+          default: "#0E131B",
+          paper: "#161C27",
         },
         text: {
           primary: "#ededed",
@@ -47,7 +47,7 @@ const theme = createTheme({
     h6: { fontWeight: 600 },
   },
   shape: {
-    borderRadius: 12,
+    borderRadius: 14,
   },
   components: {
     MuiButton: {
@@ -55,7 +55,14 @@ const theme = createTheme({
         root: {
           textTransform: "none",
           fontWeight: 500,
-          borderRadius: 8,
+          borderRadius: 12,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 16,
         },
       },
     },

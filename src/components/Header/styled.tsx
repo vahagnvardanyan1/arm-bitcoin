@@ -5,6 +5,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import MuiAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import MuiIconButton from "@mui/material/IconButton";
+import MuiLink from "@mui/material/Link";
 import { styled } from "@mui/material/styles";
 import MuiToolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -31,36 +32,51 @@ export const BrandBox = styled(Box)({
   display: "flex",
   alignItems: "center",
   gap: 8,
-  flexGrow: 1,
 });
 
-export const LogoBox = styled(Box)({
-  width: 28,
-  height: 28,
-  borderRadius: "6px",
-  background: "linear-gradient(135deg, #0070f3, #7928ca)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-});
-
-export const LogoText = styled(Typography)({
-  color: "white",
-  fontWeight: 800,
-  fontSize: 14,
-  lineHeight: 1,
+export const LogoImage = styled("img")({
+  width: 36,
+  height: 36,
+  borderRadius: "50%",
+  objectFit: "cover",
 });
 
 export const TitleText = styled(Typography)({
-  fontWeight: 600,
+  fontWeight: 700,
   letterSpacing: "-0.01em",
 });
 
-export const ActionsBox = styled(Box)({
+export const NavBox = styled(Box)(({ theme }) => ({
+  display: "none",
+  alignItems: "center",
+  gap: theme.spacing(3),
+  marginLeft: "auto",
+  marginRight: theme.spacing(2),
+  [theme.breakpoints.up("md")]: {
+    display: "flex",
+  },
+}));
+
+export const NavLink = styled(MuiLink)(({ theme }) => ({
+  color: theme.palette.text.secondary,
+  textDecoration: "none",
+  fontSize: 14,
+  fontWeight: 500,
+  transition: "color 0.2s",
+  "&:hover": {
+    color: theme.palette.primary.main,
+  },
+}));
+
+export const ActionsBox = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   gap: 4,
-});
+  [theme.breakpoints.up("md")]: {
+    marginLeft: 0,
+  },
+  marginLeft: "auto",
+}));
 
 export const ThemeToggleButton = styled(MuiIconButton)({
   color: "var(--mui-palette-text-secondary)",
@@ -68,6 +84,13 @@ export const ThemeToggleButton = styled(MuiIconButton)({
     color: "var(--mui-palette-text-primary)",
   },
 });
+
+export const MenuButton = styled(MuiIconButton)(({ theme }) => ({
+  display: "inline-flex",
+  [theme.breakpoints.up("md")]: {
+    display: "none",
+  },
+}));
 
 export const LightIcon = styled(LightModeIcon)({
   display: "none",

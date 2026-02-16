@@ -1,23 +1,18 @@
 import { getTranslations } from "next-intl/server";
 
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import TelegramIcon from "@mui/icons-material/Telegram";
 import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
 
-import { CounterDemo } from "@/components/CounterDemo";
+import { TELEGRAM_URL } from "@/constants/configs";
 
 import {
   HeroRoot,
   BackgroundGlow,
   HeroContainer,
-  BadgeChip,
+  LogoGif,
   Title,
   Subtitle,
-  PrimaryButton,
-  OutlinedButton,
-  DemoTitle,
-  DemoWrapper,
+  TelegramButton,
 } from "./styled";
 
 export const Hero = async () => {
@@ -29,10 +24,7 @@ export const Hero = async () => {
 
       <HeroContainer maxWidth="md">
         <Box className="animate-fade-in-up">
-          <BadgeChip
-            label="Next.js 16 + MUI 7 + next-intl + Zustand"
-            size="small"
-          />
+          <LogoGif src="/logo.gif" alt={t("appTitle")} />
         </Box>
 
         <Title
@@ -50,36 +42,16 @@ export const Hero = async () => {
           {t("heroSubtitle")}
         </Subtitle>
 
-        <Stack
-          direction="row"
-          spacing={2}
-          justifyContent="center"
-          className="animate-fade-in-up-delay-3"
-        >
-          <PrimaryButton
+        <Box className="animate-fade-in-up-delay-3">
+          <TelegramButton
             variant="contained"
             size="large"
-            endIcon={<ArrowForwardIcon />}
-            href="https://nextjs.org/docs"
+            startIcon={<TelegramIcon />}
+            href={TELEGRAM_URL}
           >
-            {t("getStarted")}
-          </PrimaryButton>
-          <OutlinedButton
-            variant="outlined"
-            size="large"
-            startIcon={<GitHubIcon />}
-            href="https://github.com/vahagnvardanyan1/next-template"
-          >
-            {t("viewOnGithub")}
-          </OutlinedButton>
-        </Stack>
-
-        <DemoWrapper className="animate-fade-in">
-          <DemoTitle variant="subtitle2" component="h3">
-            {t("demoTitle")}
-          </DemoTitle>
-          <CounterDemo />
-        </DemoWrapper>
+            {t("heroCtaTelegram")}
+          </TelegramButton>
+        </Box>
       </HeroContainer>
     </HeroRoot>
   );
