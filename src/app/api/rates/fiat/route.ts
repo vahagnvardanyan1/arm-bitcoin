@@ -3,8 +3,7 @@ import { NextResponse } from "next/server";
 import { CBA_API_URL } from "@/constants/configs";
 
 interface CbaResponse {
-  USD: { rate: string };
-  RUB: { rate: string };
+  [currency: string]: string | null;
 }
 
 export const GET = async () => {
@@ -17,8 +16,8 @@ export const GET = async () => {
 
     const data: CbaResponse = await response.json();
 
-    const usdAmd = parseFloat(data.USD.rate);
-    const rubAmd = parseFloat(data.RUB.rate);
+    const usdAmd = parseFloat(data.USD ?? "0");
+    const rubAmd = parseFloat(data.RUB ?? "0");
 
     return NextResponse.json({
       usdAmd,
