@@ -1,5 +1,3 @@
-import { BASE_URL } from "@/constants/configs";
-
 interface CryptoRatesResponse {
   btcUsd: number;
   timestamp: string;
@@ -12,7 +10,7 @@ interface FiatRatesResponse {
 }
 
 export const fetchCryptoRates = async (): Promise<CryptoRatesResponse> => {
-  const response = await fetch(`${BASE_URL}/api/rates/crypto`);
+  const response = await fetch("/api/rates/crypto");
 
   if (!response.ok) {
     throw new Error("Failed to fetch crypto rates");
@@ -22,7 +20,7 @@ export const fetchCryptoRates = async (): Promise<CryptoRatesResponse> => {
 };
 
 export const fetchFiatRates = async (): Promise<FiatRatesResponse> => {
-  const response = await fetch(`${BASE_URL}/api/rates/fiat`);
+  const response = await fetch("/api/rates/fiat");
 
   if (!response.ok) {
     throw new Error("Failed to fetch fiat rates");
