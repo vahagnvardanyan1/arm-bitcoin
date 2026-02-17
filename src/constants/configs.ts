@@ -3,6 +3,8 @@ export const BASE_URL =
 
 export const TELEGRAM_URL = "https://t.me/armbitcoin";
 
+export const INSTAGRAM_URL = "https://www.instagram.com/armbitcoinexchange";
+
 export const TELEGRAM_NEWS_URL = "https://t.me/ArmBitcoinNews";
 
 export const COINGECKO_API_URL =
